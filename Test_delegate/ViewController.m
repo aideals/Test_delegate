@@ -9,19 +9,40 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic,strong) UILabel *label;
+@property (nonatomic,strong) UIButton *button;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(100, 75, 105, 80)];
+    self.label.backgroundColor = [UIColor greenColor];
+        
+    self.button = [[UIButton alloc] initWithFrame:CGRectMake(250, 200, 95, 65)];
+    self.button.backgroundColor = [UIColor blackColor];
+    [self.button setTitle:@"pass" forState:UIControlStateNormal];
+    [self.button addTarget:self action:@selector(change:) forControlEvents:UIControlEventTouchDown];
+    
+    [self.view addSubview:self.label];
+    [self.view addSubview:self.button];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)change:(id)sender
+{
+    SecondViewController *svc = [[SecondViewController alloc] initWithNibName:nil bundle:nil];
+    
+    svc.delegate = self;
+    [self.navigationController pushViewController:svc animated:YES];
 }
+
+- (void)secondLabelText:(NSString *)text
+{
+    self.label.text = text;
+}
+
 
 @end
