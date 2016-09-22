@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "ViewController.h"
 
 @interface SecondViewController ()
 @property (nonatomic,strong) UILabel *label;
@@ -37,7 +38,9 @@
 - (IBAction)gotoFirstView:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
-
+    ViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    vc = self.delegate;
+    
     [self.delegate secondLabelText:self.label.text];
     
 }

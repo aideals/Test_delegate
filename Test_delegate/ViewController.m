@@ -35,12 +35,13 @@
 {
     SecondViewController *svc = [[SecondViewController alloc] initWithNibName:nil bundle:nil];
     
-    svc.delegate = self;
+   
     [self.navigationController pushViewController:svc animated:YES];
 }
 
 - (void)secondLabelText:(NSString *)text
 {
+    
     self.label.text = text;
 }
 

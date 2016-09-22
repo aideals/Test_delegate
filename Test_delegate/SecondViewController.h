@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
 
-@protocol SecondLabelTextDelegate <NSObject>
+
+@protocol SecondLabelTextDelegate 
 
 - (void)secondLabelText:(NSString *)text;
 @end
