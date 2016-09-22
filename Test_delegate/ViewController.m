@@ -34,6 +34,7 @@
 - (IBAction)change:(id)sender
 {
     SecondViewController *svc = [[SecondViewController alloc] initWithNibName:nil bundle:nil];
+    svc.delegate = self;
     
    
     [self.navigationController pushViewController:svc animated:YES];
@@ -44,6 +45,5 @@
     
     self.label.text = text;
 }
-
 
 @end

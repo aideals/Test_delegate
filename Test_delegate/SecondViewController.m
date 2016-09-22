@@ -38,8 +38,6 @@
 - (IBAction)gotoFirstView:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
-    ViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    vc = self.delegate;
     
     [self.delegate secondLabelText:self.label.text];
     
